@@ -1,0 +1,23 @@
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+    int n,t=1;  
+    cin >> n;  
+    if (n<2)  
+    {  
+        cout << n << "不是素数" << endl;//1既不是素数也不是合数，素数从2开始  
+        return 0;  
+    }  
+    for (int i = 2; i < sqrt(n)+1;i++)//也可用n/2，不过计算量要比sqrt大一些  
+    {  
+        if (n%i == 0)   
+        {  
+            t = 0;  
+            break;   
+        }  
+    }  
+    if (t) cout << n << "是素数" << endl;  
+          else cout << n << "不是素数" << endl;  
+    return 0;  
+}  
